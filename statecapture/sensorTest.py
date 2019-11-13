@@ -8,7 +8,8 @@ import logging
 import sys
 
 #logging settings
-logging.basicConfig(level=logging.INFO,filename='sensorTest.log',format='%(levelname)s %(asctime)s: %(message)s')
+logging.basicConfig(level=logging.INFO,filename='/var/log/sensorTest.log',format='%(levelname)s %(asctime)s: %(message)s')
+#logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logging.info('Running sensorTest')
 logging.info('Loggin initialized')
 
