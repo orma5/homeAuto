@@ -50,8 +50,9 @@ except:
 
 #Connect to database and write latest sensor state
 try:
+    logging.info('Connecting to database host: %s with user: %s',host,user)
     mydb = mysql.connector.connect(host=host,user=user,passwd=passwd)
-    logging.info('Connect to database host: %s with user: %s',host,user)
+    logging.info('Connection successfull')
     mycursor = mydb.cursor()
 
     sql = "INSERT INTO homeauto.state_data(lastupdated,state_type,state_value,state_uom) values(%s,'temperature',%s,'C')"
